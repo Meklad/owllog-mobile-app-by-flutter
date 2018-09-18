@@ -10,6 +10,10 @@ import './news.dart';
 
 /// Main News Manager Widget
 class NewsManager extends StatefulWidget {
+  final String startingNews;
+
+  NewsManager(this.startingNews);
+
   @override
   State<StatefulWidget> createState() {
     return _NewsManagerState();
@@ -18,9 +22,18 @@ class NewsManager extends StatefulWidget {
 
 /// Change The State of New Manager Widget by Adding new News to the Screen.
 class _NewsManagerState extends State<NewsManager> {
-  List<String> _news = [
-    '!Braking News!: Two Trains Impacts in Ramsis Station.'
-  ];
+  List<String> _news = [];
+
+  @override
+    void initState() {
+      _news.add(widget.startingNews);
+      super.initState();
+    }
+
+  @override
+    void didUpdateWidget(NewsManager oldWidget) {
+      super.didUpdateWidget(oldWidget);
+    }
 
   @override
   Widget build(BuildContext context) {

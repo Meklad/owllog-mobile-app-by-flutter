@@ -22,7 +22,7 @@ class Owllog extends StatelessWidget {
         appBar: AppBar(
           title: Text('Owllog'),
         ),
-        body: NewsManager(),
+        body: NewsManager('!Braking News!: Two Trains Impacts in Ramsis Station.'),
       ),
     );
   }
