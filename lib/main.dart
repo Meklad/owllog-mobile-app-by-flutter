@@ -12,10 +12,10 @@ class Owllog extends StatelessWidget {
         appBar: AppBar(
           title: Text('Owllog'),
         ),
-        body: Card(child: Column(children: <Widget>[
-          Image.asset('assets/food.jpg'),
-          Text('The News')
-        ],)),
+        body: Card(
+            child: Column(
+          children: <Widget>[Image.asset('assets/food.jpg'), Text('The News')],
+        )),
       ),
     );
   }
