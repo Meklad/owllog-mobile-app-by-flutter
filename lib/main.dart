@@ -18,11 +18,16 @@ class Owllog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.red,
+        accentColor: Colors.deepPurple
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text('Owllog'),
         ),
-        body: NewsManager('!Braking News!: Two Trains Impacts in Ramsis Station.'),
+        body: NewsManager(startingNews: '!Braking News!: Two Trains Impacts in Ramsis Station.'),
       ),
     );
   }

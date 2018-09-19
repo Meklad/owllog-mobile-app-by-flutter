@@ -8,7 +8,7 @@ class News extends StatelessWidget {
 
   final List<String> news;
 
-  News(this.news);
+  News([this.news = const []]);
 
   @override
   Widget build(BuildContext context) {

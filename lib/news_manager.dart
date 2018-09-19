@@ -12,7 +12,7 @@ import './news.dart';
 class NewsManager extends StatefulWidget {
   final String startingNews;
 
-  NewsManager(this.startingNews);
+  NewsManager({this.startingNews = 'Owllog Title'});
 
   @override
   State<StatefulWidget> createState() {
@@ -42,6 +42,7 @@ class _NewsManagerState extends State<NewsManager> {
         Container(
           margin: EdgeInsets.all(10.0),
           child: RaisedButton(
+            color: Theme.of(context).primaryColor,
             onPressed: () {
               setState(() {
                 _news.add('Advanced News From Owllog.');
