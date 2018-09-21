@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
  * Imported Widgets
  */
 import './news.dart';
+import './news_control.dart';
 
 /// Main News Manager Widget
 class NewsManager extends StatefulWidget {
@@ -25,15 +26,21 @@ class _NewsManagerState extends State<NewsManager> {
   List<String> _news = [];
 
   @override
-    void initState() {
-      _news.add(widget.startingNews);
-      super.initState();
-    }
+  void initState() {
+    _news.add(widget.startingNews);
+    super.initState();
+  }
 
   @override
-    void didUpdateWidget(NewsManager oldWidget) {
-      super.didUpdateWidget(oldWidget);
-    }
+  void didUpdateWidget(NewsManager oldWidget) {
+    super.didUpdateWidget(oldWidget);
+  }
+
+  void _addNews(String news) {
+    setState(() {
+      _news.add(news);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,15 +48,7 @@ class _NewsManagerState extends State<NewsManager> {
       children: [
         Container(
           margin: EdgeInsets.all(10.0),
-          child: RaisedButton(
-            color: Theme.of(context).primaryColor,
-            onPressed: () {
-              setState(() {
-                _news.add('Advanced News From Owllog.');
-              });
-            },
-            child: Text('Add News'),
-          ),
+          child: NewsControl(_addNews),
         ),
         News(_news),
       ],
